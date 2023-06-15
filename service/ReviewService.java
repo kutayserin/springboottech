@@ -38,7 +38,7 @@ public class ReviewService {
         review.setUserEmail(userEmail);
         if(reviewRequest.getReviewDescription().isPresent()){
             review.setReviewDescription(reviewRequest.getReviewDescription().map(
-                    Object::toString //We are changing the description to a string(method reference)
+                    Object::toString //Changing the description to a string(method reference)
             ).orElse(null));
         }
         review.setDate(Date.valueOf(LocalDate.now()));

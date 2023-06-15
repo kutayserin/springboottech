@@ -43,7 +43,7 @@ public class ProductService {
         this.paymentRepository = paymentRepository;
     }
 
-    @Transactional(readOnly = false, rollbackFor = Exception.class)
+    //readOnly = false, rollbackFor = Exception.class
     public Product checkoutProduct (String userEmail, Long productId) throws Exception {
         Optional<Product> product = productRepository.findById(productId);
 

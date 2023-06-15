@@ -16,7 +16,7 @@ import java.util.List;
 public class MyDataRestConfig implements RepositoryRestConfigurer {
 
 
-    private String theAllowedOrigins = "*";
+    private String theAllowedOrigins = "https://localhost:3000";
 
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config,
@@ -43,9 +43,9 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         config.getExposureConfiguration()
                 .forDomainType(theClass)
                 .withItemExposure((metdata,httpMethods) ->
-                        httpMethods.enable(theUnsupportedActions))
+                        httpMethods.disable(theUnsupportedActions))
                 .withCollectionExposure((metdata, httpMethods) ->
-                        httpMethods.enable(theUnsupportedActions));
+                        httpMethods.disable(theUnsupportedActions));
 
     }
 
